@@ -4,7 +4,7 @@
   "type": "module",
   "description": "Static research engineering portfolio and original public grader demonstration",
   "scripts": {
-    "test": "node --test demo/test.mjs",
-    "check": "node --check app.js && node --check demo/evaluator.mjs"
+    "test": "node --test demo/test.mjs tests/site-links.test.mjs",
+    "check": "node --check app.js && node --check project-data.js && node --check project-page.js && node --check demo/evaluator.mjs"
   }
 }
