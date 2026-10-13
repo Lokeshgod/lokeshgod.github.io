@@ -1,0 +1,10 @@
+{
+  "name": "lokesh-matta-ai-benchmark-portfolio",
+  "private": true,
+  "type": "module",
+  "description": "Static research engineering portfolio and original public grader demonstration",
+  "scripts": {
+    "test": "node --test demo/test.mjs",
+    "check": "node --check app.js && node --check demo/evaluator.mjs"
+  }
+}
