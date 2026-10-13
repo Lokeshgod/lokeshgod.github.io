@@ -49,3 +49,6 @@
 .detail-nav a:last-child{text-align:right}
 @media(max-width:800px){.detail-intro{grid-template-columns:1fr;gap:15px}.detail-hero{padding:50px 0}.detail-kicker{margin-top:40px}.detail-examples{grid-template-columns:1fr}.detail-integrity{grid-template-columns:1fr;gap:15px}.detail-integrity>div{grid-row:auto}}
 @media(max-width:540px){.detail-points,.detail-verifiers{grid-template-columns:1fr}.detail-verifiers>div{border-right:0}.detail-metric{align-items:flex-start;flex-direction:column;gap:10px;padding:24px}.detail-hero h1{font-size:45px}.detail-meta{margin-top:27px}.detail-section{padding-top:70px}.detail-nav a strong{font-size:15px}.detail-example{padding:20px}}
+
+/* Keep project-detail navigation usable on narrow screens. */
+@media(max-width:850px){.site-header .site-nav{display:none!important}}
