@@ -5,12 +5,12 @@ const selected = [
   {name:"Project Pluto",category:"agents",field:"TERMINAL AGENTS",description:"Terminal-Bench-style development workflows with reproducible environments, task contracts, independent grading, and reference solutions.",tags:["Linux","Terminal agents","Tests"],status:"Development record",statusType:"general"},
   {name:"Project Terminus",subtitle:"Edition 2",category:"agents",field:"SYSTEMS ENGINEERING",description:"Go policy-reconciliation benchmark covering filesystem state, systemd configuration, atomic replacement, idempotency, and regression behavior.",tags:["Go","Systemd","Atomicity"],status:"Locally validated",statusType:"local"},
   {name:"Project Torch",category:"research",field:"ML FRAMEWORKS",description:"JAX transformation and custom-derivative challenges with executable reference paths, regression gates, and partial-repair probes.",tags:["JAX","Autodiff","pytest"],status:"Locally validated",statusType:"local"},
-  {name:"Project Corgi",category:"research",field:"REPOSITORY ENGINEERING",description:"Complex compiler/runtime and symbolic-computation benchmark candidates built around multi-file changes and conformance coverage.",tags:["Cython","SymPy","Conformance"],status:"Locally validated",statusType:"local"},
+  {name:"Project Corgi",category:"research",field:"REPOSITORY ENGINEERING",description:"Complex compiler/runtime and symbolic-computation benchmark candidates built around multi-file changes and conformance coverage.",tags:["Cython","SymPy","Conformance"],status:"9 tasks reported",statusType:"general"},
   {name:"Project Dynamo",category:"evaluation",field:"BENCHMARK REPAIR",description:"Assessment harness repairs, reproducibility improvements, reference paths, and validation against incomplete implementations.",tags:["Verifier","Regression","Harnesses"],status:"Revision work",statusType:"general"},
   {name:"Project Fenrir",category:"evaluation",field:"SOFTWARE RELIABILITY",description:"C++ structured-input fuzzing, deterministic crash reproduction, root-cause patching, and agent failure analysis.",tags:["C++","libFuzzer","Debugging"],status:"Approved task recorded",statusType:"approved"},
   {name:"Project Silver",category:"agents",field:"REPOSITORY TASKS",description:"Realistic repository workflows and engineering bug-fix candidates, including a locally tested utility-billing codebase.",tags:["Git","Python","Test design"],status:"Repository work",statusType:"general"},
   {name:"Project Kepler",category:"research",field:"FRONTIER BENCHMARKS",description:"Optimization and formal-mathematics task engineering with deterministic verification, adversarial probes, and quality-review revisions.",tags:["Optimization","Python","Grading"],status:"Mixed review outcomes",statusType:"general"},
-  {name:"Project Starfish",subtitle:"Coding",category:"evaluation",field:"ENGINEERING COMPUTATION",description:"Scientific and electrical-engineering coding tasks with numerical models and independently reconstructed physical correctness checks.",tags:["Numerical methods","Python","Verifiers"],status:"4 accepted tasks recorded",statusType:"approved"}
+  {name:"Project Starfish",subtitle:"Coding",category:"evaluation",field:"ENGINEERING COMPUTATION",description:"Scientific and electrical-engineering coding tasks with numerical models and independently reconstructed physical correctness checks.",tags:["Numerical methods","Python","Verifiers"],status:"66 accepted (reported)",statusType:"approved"}
 ];
 const categoryLabels={software:"Software & agents",coding:"Coding evaluation",stem:"Math & STEM",language:"Language & multimodal",pending:"Reference only / pending"};
 const history=[
@@ -39,6 +39,7 @@ const history=[
   ["Project Hippo Volt / VOLT","pending"],["Project Peridot67","pending"],
   ["Dolphin SRT","pending"],["Valkyrie","pending"]
 ];
+const slugByProject={"Project Odyssey":"odyssey","Project Pluto":"pluto","Project Terminus":"terminus","Project Torch":"torch","Project Corgi":"corgi","Project Dynamo":"dynamo","Project Fenrir":"fenrir","Project Silver":"silver","Project Kepler":"kepler","Project Starfish":"starfish"};
 const projectGrid=document.getElementById("project-grid");
 const filterButtons=[...document.querySelectorAll("[data-filter]")];
 const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -47,12 +48,12 @@ function renderProjects(filter="all") {
   const shown=selected.filter(p=>filter==="all"||p.category===filter);
   projectGrid.innerHTML=shown.map((p,i)=> {
     const subtitle=p.subtitle?'<span> / '+escapeHtml(p.subtitle)+'</span>':"";
-    return '<article class="project-card">'+
+    return '<a class="project-card" href="/projects/'+slugByProject[p.name]+'.html" aria-label="Read details about '+escapeHtml(p.name)+'">'+
       '<div class="project-meta"><span>'+escapeHtml(p.field)+'</span><span class="project-number">'+String(i+1).padStart(2,"0")+' / '+String(shown.length).padStart(2,"0")+'</span></div>'+
       '<h3 class="project-title">'+escapeHtml(p.name)+subtitle+'</h3>'+
       '<p class="project-description">'+escapeHtml(p.description)+'</p>'+
       '<div class="project-bottom"><div class="project-tags">'+p.tags.map(t=>'<span>'+escapeHtml(t)+'</span>').join("")+'</div>'+
-      '<span class="project-status '+(p.statusType==="approved"?"approved":"")+'">'+escapeHtml(p.status)+'</span></div></article>';
+      '<span class="project-status '+(p.statusType==="approved"?"approved":"")+'">'+escapeHtml(p.status)+'</span></div><span class="open-project">Explore project ↗</span></a>';
   }).join("");
 }
 renderProjects();
@@ -70,9 +71,13 @@ function renderArchive(){
   const cat=category.value;
   const matches=history.filter(([name,c])=>(cat==="all"||cat===c)&&name.toLocaleLowerCase().includes(term));
   count.textContent=matches.length+" / "+history.length+" entries";
-  list.innerHTML=matches.length?matches.map(([name,c])=>
-    '<div class="archive-entry"><div><strong>'+escapeHtml(name)+'</strong><span>'+escapeHtml(categoryLabels[c])+'</span></div><span class="entry-dot '+(c==="pending"?"pending":"")+'" aria-hidden="true"></span></div>'
-  ).join(""):'<p class="empty-state">No projects match that search. Try a broader term or another category.</p>';
+  list.innerHTML=matches.length?matches.map(([name,c])=>{
+    const project=selected.find(p=>name===p.name || name.startsWith(p.name+" —") || name.startsWith(p.name+" /"));
+    const href=project?'/projects/'+slugByProject[project.name]+'.html':null;
+    const open=href?'<a class="archive-entry" href="'+href+'">':'<div class="archive-entry">';
+    const close=href?'</a>':'</div>';
+    return open+'<div><strong>'+escapeHtml(name)+'</strong><span>'+escapeHtml(categoryLabels[c])+(href?' · View details ↗':'')+'</span></div><span class="entry-dot '+(c==="pending"?"pending":"")+'" aria-hidden="true"></span>'+close;
+  }).join(""):'<p class="empty-state">No projects match that search. Try a broader term or another category.</p>';
 }
 search.addEventListener("input",renderArchive);
 category.addEventListener("change",renderArchive);
