@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1116">
+  <meta name="description" content="Lokesh Matta — AI benchmark engineer focused on long-horizon coding agents, reproducible evaluation, deterministic graders, and software reliability.">
+  <meta name="author" content="Kumar Srivijaya Lokesh Matta">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lokesh Matta · AI Benchmark Engineering">
+  <meta property="og:description" content="Engineering rigorous evaluations for frontier coding agents. Selected work, technical case studies, and an original verifier demo.">
+  <meta property="og:url" content="https://lokeshgod.github.io/">
+  <link rel="canonical" href="https://lokeshgod.github.io/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+  <title>Lokesh Matta — AI Benchmark Engineering</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-glow" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="shell nav-wrap">
+      <a class="brand" href="#top" aria-label="Lokesh Matta, back to top">
+        <span class="brand-mark">L<span class="mark-slash">/</span>M</span>
+        <span class="brand-text">LOKESH<span>MATTA</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#case-studies">Case studies</a>
+        <a href="#method">Method</a>
+        <a href="#lab">Live lab</a>
+        <a href="#archive">Archive</a>
+        <a class="nav-contact" href="mailto:lokesh5649p@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-content reveal">
+        <div class="eyebrow"><span class="signal-dot"></span> INDEPENDENT AI EVALUATION &amp; ENGINEERING <span class="eyebrow-dash">//</span> 2024—2026</div>
+        <h1 id="hero-title">Engineering <span class="dim-word">better tests</span> for <em>better AI agents.</em></h1>
+        <p class="hero-intro">I'm Lokesh — an electrical engineering graduate working at the intersection of <strong>software engineering, coding-agent benchmarks, and model evaluation.</strong> I build realistic tasks, inspect failure modes, and care deeply about whether a grader actually measures correctness.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore selected work <span aria-hidden="true">↗</span></a>
+          <a class="button button-quiet" href="#lab">Try the mini grader <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-location"><span class="small-ring"></span> Based in Andhra Pradesh, India <span class="hero-sep">/</span> Working remotely</div>
+      </div>
+
+      <aside class="hero-panel reveal" aria-label="Evaluation lifecycle">
+        <div class="panel-top"><span class="mono micro">EVALUATION / PIPELINE</span><span class="live-mark"><span></span> SYSTEMATIC</span></div>
+        <div class="pipeline">
+          <div class="pipeline-step"><span class="pipeline-number">01</span><div><strong>Specify the behavior</strong><p>Requirements, invariants, edge cases</p></div><span class="pipeline-icon">↗</span></div>
+          <div class="pipeline-step"><span class="pipeline-number">02</span><div><strong>Build a reference</strong><p>Runnable implementation &amp; environment</p></div><span class="pipeline-icon">↗</span></div>
+          <div class="pipeline-step"><span class="pipeline-number">03</span><div><strong>Verify independently</strong><p>Baseline, regression, adversarial tests</p></div><span class="pipeline-icon">↗</span></div>
+          <div class="pipeline-step"><span class="pipeline-number">04</span><div><strong>Study the failure</strong><p>Agent traces, partial fixes, grader gaps</p></div><span class="pipeline-icon">↗</span></div>
+        </div>
+        <div class="panel-bottom"><span class="mono">SPEC → BUILD → TEST → LEARN</span><span class="tiny-cross" aria-hidden="true">✳</span></div>
+      </aside>
+    </section>
+
+    <section class="proof-strip shell" aria-label="Selected work at a glance">
+      <div class="proof-item"><span class="proof-number">10<span>+</span></span><span class="proof-label">Selected agent &amp;<br>benchmark programs</span></div>
+      <div class="proof-item"><span class="proof-number">04</span><span class="proof-label">Reviewer-accepted<br>Starfish coding tasks¹</span></div>
+      <div class="proof-item"><span class="proof-number">01</span><span class="proof-label">Approved C++ fuzzing<br>benchmark on record¹</span></div>
+      <p class="proof-note">¹ Based on historical project review records; other projects below may be local prototypes or revisions rather than accepted submissions.</p>
+    </section>
+
+    <section class="section shell" id="work" aria-labelledby="work-heading">
+      <div class="section-heading reveal">
+        <div><span class="section-kicker"><span class="kicker-line"></span> 01 / SELECTED WORK</span><h2 id="work-heading">Designed to test<br><em>the real thing.</em></h2></div>
+        <p>Software-agent evaluation, from terminal workflows and multi-file repairs to fault discovery and rigorous automated verification.</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="Filter selected projects">
+        <button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">All projects <span>10</span></button>
+        <button class="filter-chip" type="button" data-filter="agents" aria-pressed="false">Coding agents</button>
+        <button class="filter-chip" type="button" data-filter="evaluation" aria-pressed="false">Evaluators &amp; testing</button>
+        <button class="filter-chip" type="button" data-filter="research" aria-pressed="false">Research &amp; systems</button>
+      </div>
+      <div class="project-grid" id="project-grid" aria-live="polite"></div>
+      <noscript><p>The selected projects include Odyssey, Pluto, Terminus, Torch, Corgi, Dynamo, Fenrir, Silver, Kepler, and Starfish.</p></noscript>
+    </section>
+
+    <section class="section case-section" id="case-studies" aria-labelledby="case-heading">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div><span class="section-kicker"><span class="kicker-line"></span> 02 / ENGINEERING NOTES</span><h2 id="case-heading">What the <em>work</em><br>actually involved.</h2></div>
+          <p>Representative, high-level studies drawn from project records. These are explanations of methods and outcomes—not releases of confidential client submissions.</p>
+        </div>
+        <div class="cases">
+          <article class="case-card reveal">
+            <div class="case-index"><span>CASE STUDY / 01</span><span class="case-status"><span class="dot dot-approved"></span> APPROVED SUBMISSION</span></div>
+            <div class="case-main">
+              <div>
+                <p class="case-label">PROJECT FENRIR · C++ / LIBFUZZER</p>
+                <h3>From a crafted input to a <em>root-cause repair.</em></h3>
+                <p>A structured binary-input path reached an unbounded allocation in a windowed decoder. The evaluation asked more than “can an agent stop the crash?”—it required tracing the failure through actual project code, producing a reproducible proof, and preserving intended behavior after repair.</p>
+                <div class="case-tags"><span>C++</span><span>libFuzzer</span><span>Crash reproduction</span><span>Root-cause patching</span></div>
+              </div>
+              <div class="case-aside">
+                <span class="aside-label">HISTORICAL EVIDENCE</span>
+                <strong>Approved</strong>
+                <p>Recorded approval of a C++ fuzzing task; historical model-calibration results indicated a difficult but solvable failure.</p>
+              </div>
+            </div>
+            <div class="case-footer"><span>Key lesson</span><p>A grader must reject symptom suppression and accept genuine repairs that maintain regression behavior.</p></div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-index"><span>CASE STUDY / 02</span><span class="case-status"><span class="dot dot-approved"></span> ACCEPTED TASK SET</span></div>
+            <div class="case-main">
+              <div>
+                <p class="case-label">PROJECT STARFISH · ENGINEERING COMPUTATION</p>
+                <h3>Verifying a solution <em>from first principles.</em></h3>
+                <p>Engineering coding tasks connected raw observations and physical constraints to an auditable design decision. In a grounding-system case, the verifier independently reconstructed circuit and exposure calculations across a multi-scenario robustness audit instead of trusting a hardcoded expected-output file.</p>
+                <div class="case-tags"><span>Python</span><span>Numerical checks</span><span>Independent verifier</span><span>Robust optimization</span></div>
+              </div>
+              <div class="case-aside">
+                <span class="aside-label">HISTORICAL EVIDENCE</span>
+                <strong>4 tasks</strong>
+                <p>Four reviewer-accepted coding tasks documented in the project audit; no client source or private tests published here.</p>
+              </div>
+            </div>
+            <div class="case-footer"><span>Key lesson</span><p>Grade invariants and independently recomputed properties, not the appearance of a plausible report.</p></div>
+          </article>
+          <article class="case-card reveal">
+            <div class="case-index"><span>CASE STUDY / 03</span><span class="case-status"><span class="dot dot-local"></span> LOCAL VALIDATION</span></div>
+            <div class="case-main">
+              <div>
+                <p class="case-label">PROJECT ODYSSEY · STATEFUL SYSTEMS</p>
+                <h3>Correctness across <em>time, state, and failure.</em></h3>
+                <p>A long-horizon event-processing task combined revisions, retractions, exactly-once sequencing, watermarks, snapshots, crash recovery, and an indexed workload. A candidate needed to preserve interacting invariants across operations and restarts—not just make isolated unit tests pass.</p>
+                <div class="case-tags"><span>Python</span><span>Event processing</span><span>Recovery</span><span>Concurrency</span></div>
+              </div>
+              <div class="case-aside">
+                <span class="aside-label">LOCAL VERIFICATION</span>
+                <strong>49 / 49</strong>
+                <p>Reference passed 49 local sealed checks in 12 groups. Earlier hosted version did not satisfy the long-horizon difficulty gate; revised hosted acceptance is unconfirmed.</p>
+              </div>
+            </div>
+            <div class="case-footer"><span>Key lesson</span><p>Good long-horizon benchmarks make independently reasonable fixes interact—and verify the combined behavior.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="method" aria-labelledby="method-heading">
+      <div class="section-heading reveal">
+        <div><span class="section-kicker"><span class="kicker-line"></span> 03 / HOW I WORK</span><h2 id="method-heading">A benchmark is only<br>as good as <em>its grader.</em></h2></div>
+        <p>The difference between testing a model and testing its ability to guess what a benchmark author wanted.</p>
+      </div>
+      <div class="method-grid">
+        <article class="method-card"><span class="method-step">01 / CONTRACTS</span><h3>Specify observable behavior.</h3><p>Frame a realistic engineering task around inputs, outputs, invariants, edge cases, and the limits of acceptable solutions.</p></article>
+        <article class="method-card"><span class="method-step">02 / REFERENCE</span><h3>Prove it can be solved.</h3><p>Build a reference path and preserve a broken baseline. Record exactly what changed and which checks must flip.</p></article>
+        <article class="method-card"><span class="method-step">03 / GRADING</span><h3>Verify properties, not strings.</h3><p>Recompute from source inputs where possible; enforce identity coverage, deterministic ordering, regression safety, and anti-shortcut checks.</p></article>
+        <article class="method-card"><span class="method-step">04 / CALIBRATION</span><h3>Inspect partial failures.</h3><p>Compare local baseline and reference runs, analyze which invariants fail, and label hosted or live-agent results only when they exist.</p></article>
+      </div>
+    </section>
+
+    <section class="section lab-section" id="lab" aria-labelledby="lab-heading">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div><span class="section-kicker"><span class="kicker-line"></span> 04 / RUN THE IDEA</span><h2 id="lab-heading">Don't just read about<br>grading. <em>Run one.</em></h2></div>
+          <p>A tiny, original public demonstration of invariant-driven evaluation. It executes real JavaScript tests in your browser; it is not a client task or a live frontier-model benchmark.</p>
+        </div>
+        <div class="lab-grid">
+          <div class="lab-console">
+            <div class="console-head"><span class="console-dots"><i></i><i></i><i></i></span><span>replay-invariant-demo / test runner</span><span>JS · LOCAL</span></div>
+            <div class="console-content">
+              <p class="console-comment">// Contract: accept sequential events; ignore exact replays.</p>
+              <p class="console-comment">// Reject sequence gaps, conflicting replays, invalid payloads.</p>
+              <div class="console-command">$ run-evaluation --candidate=<span id="runner-name">starter</span></div>
+              <div id="lab-results" class="lab-results" aria-live="polite"><p class="console-muted">Select a candidate below and execute the test suite.</p></div>
+            </div>
+            <div class="console-bottom">
+              <span>7 deterministic scenarios</span><span id="lab-score">NOT RUN</span>
+            </div>
+          </div>
+          <div class="lab-sidebar">
+            <span class="micro lab-side-label">INTERACTIVE VERIFIER / 001</span>
+            <h3>One specification.<br>Three implementations.</h3>
+            <p>Compare an untouched starter, an incomplete implementation, and a reference that handles idempotency and ordering. The tests actually execute in this page.</p>
+            <div class="lab-actions">
+              <button id="run-starter" class="lab-button" type="button">Run starter <span>↗</span></button>
+              <button id="run-partial" class="lab-button" type="button">Run partial fix <span>↗</span></button>
+              <button id="run-reference" class="lab-button lab-button-accent" type="button">Run reference <span>↗</span></button>
+            </div>
+            <a class="text-link" href="https://github.com/Lokeshgod/lokeshgod.github.io/tree/main/demo" target="_blank" rel="noopener noreferrer">Inspect the original demo source <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="archive" aria-labelledby="archive-heading">
+      <div class="section-heading reveal">
+        <div><span class="section-kicker"><span class="kicker-line"></span> 05 / PROJECT INDEX</span><h2 id="archive-heading">The broader <em>record.</em></h2></div>
+        <p>Beyond the featured engineering work: a searchable index of project names and technical workstreams gathered from historical records across AI evaluation, mathematics, coding, and multimodal annotation.</p>
+      </div>
+      <div class="archive-notice"><span class="notice-icon">i</span><p><strong>How to read this index.</strong> It preserves historical project names, aliases, technical workstreams, and application-only references. Inclusion does <em>not</em> mean every name was a completed or approved contract. Some details remain unverified. Client-only deliverables are not published.</p></div>
+      <div class="archive-toolbar">
+        <label class="search-wrap"><span class="search-symbol" aria-hidden="true">⌕</span><span class="sr-only">Search historical projects</span><input id="archive-search" type="search" placeholder="Search a project or workstream…" autocomplete="off"></label>
+        <select id="archive-category" aria-label="Filter project category">
+          <option value="all">All categories</option>
+          <option value="software">Software &amp; agents</option>
+          <option value="coding">Coding evaluation</option>
+          <option value="stem">Mathematics &amp; STEM</option>
+          <option value="language">Language &amp; multimodal</option>
+          <option value="pending">Reference only / pending</option>
+        </select>
+        <span class="archive-count mono" id="archive-count">61 entries</span>
+      </div>
+      <div id="archive-list" class="archive-list"></div>
+      <p class="archive-footnote">Aliases are combined, not double-counted. Historical descriptions, verification status, and association with a platform are kept distinct from published client approvals.</p>
+    </section>
+
+    <section class="section about-section" id="about" aria-labelledby="about-heading">
+      <div class="shell about-grid">
+        <div>
+          <span class="section-kicker"><span class="kicker-line"></span> 06 / BACKGROUND</span>
+          <h2 id="about-heading">An engineering<br>mindset. <em>Applied to AI.</em></h2>
+        </div>
+        <div class="about-copy">
+          <p>My background is in electrical and electronics engineering, where reliability, measurable behavior, and system-level thinking matter. I brought that perspective into AI evaluation work beginning in 2024, with a growing focus on coding-agent benchmarks and reproducible technical verification.</p>
+          <div class="education-list">
+            <div><span>2022—2025</span><strong>B.Tech · Electrical &amp; Electronics Engineering</strong><p>University College of Engineering Kakinada, JNTUK</p></div>
+            <div><span>2019—2022</span><strong>Diploma · Electrical &amp; Electronics Engineering</strong><p>Andhra Polytechnic, Kakinada</p></div>
+            <div><span>2023—2026</span><strong>Industrial engineering experience</strong><p>Reliance Industries, Manihamsa Power Project, Coromandel International</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section shell" id="contact">
+      <div class="contact-inset">
+        <span class="section-kicker">07 / CONTACT</span>
+        <h2>Have a hard problem<br><em>worth measuring?</em></h2>
+        <p>Interested in coding-agent evaluations, software reliability, and research engineering. Open to conversations about meaningful technical work.</p>
+        <a href="mailto:lokesh5649p@gmail.com" class="button button-dark">Start a conversation <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div class="footer-top"><a class="brand footer-brand" href="#top"><span class="brand-mark">L<span class="mark-slash">/</span>M</span><span class="brand-text">LOKESH<span>MATTA</span></span></a><p>Engineering rigorous evaluations for AI agents.</p><a href="#top">Back to top ↑</a></div>
+    <div class="disclosure"><strong>Transparency &amp; AI assistance.</strong> AI-assisted tools supported aspects of ideation, implementation, debugging, testing, validation, and documentation in portions of the work described here. Verification status is stated as recorded; local reference tests are not equivalent to client approval. Public demos are original examples separate from confidential client tasks.</div>
+    <div class="footer-bottom"><span>© <span id="year">2026</span> Lokesh Matta</span><span>Built for the open web · India</span></div>
+  </footer>
+</body>
+</html>
