@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lokeshgod.github.io/sitemap.xml
