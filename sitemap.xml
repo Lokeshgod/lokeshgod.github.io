@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://lokeshgod.github.io/</loc></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://lokeshgod.github.io/</loc></url>
+  <url><loc>https://lokeshgod.github.io/projects/odyssey.html</loc></url>
+  <url><loc>https://lokeshgod.github.io/projects/pluto.html</loc></url>
+  <url><loc>https://lokeshgod.github.io/projects/terminus.html</loc></url>
+  <url><loc>https://lokeshgod.github.io/projects/torch.html</loc></url>
+  <url><loc>https://lokeshgod.github.io/projects/corgi.html</loc></url>
+  <url><loc>https://lokeshgod.github.io/projects/dynamo.html</loc></url>
+  <url><loc>https://lokeshgod.github.io/projects/fenrir.html</loc></url>
+  <url><loc>https://lokeshgod.github.io/projects/silver.html</loc></url>
+  <url><loc>https://lokeshgod.github.io/projects/kepler.html</loc></url>
+  <url><loc>https://lokeshgod.github.io/projects/starfish.html</loc></url>
+</urlset>
